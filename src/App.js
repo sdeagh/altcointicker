@@ -46,7 +46,7 @@ class App extends Component {
 						this.setState({startingPrice: this.state.currentPrice})
 					}
 							// if price is up more than 1% then buy signal
-					if (percentMove > 0.1) {
+					if (percentMove > 0.2) {
 						console.log("Commence Buying at: ", this.state.currentPrice)
 							// set purchase (starting) price and track
 							// set tradingState to inPosition
@@ -65,12 +65,12 @@ class App extends Component {
 					break;
 				case "In Position":
 							// sell for loss if move < 1%, sell for profit if move > 5%
-					if (percentMove >= 1.0) {
+					if (percentMove >= 0.6) {
 						console.log("Selling for profit at: ", this.state.currentPrice)
 							// this.setState({startingPrice: this.state.currentPrice})
 						this.setState({tradingState: "Just Sold"})
 					}
-					if (percentMove <= -0.2) {
+					if (percentMove <= -0.1) {
 						console.log("Selling for loss at: ", this.state.currentPrice)
 							// this.setState({startingPrice: this.state.currentPrice})
 						this.setState({tradingState: "Just Sold"})

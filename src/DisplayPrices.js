@@ -6,7 +6,7 @@ const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove}
 
     return (
         <div>
-            <div className = "col-md-4">
+            <div className = "col-xs-12 col-s-6 col-md-4">
                 <div className="card card-stats">
                     <div className="content">
                         <div className="row ">
@@ -16,7 +16,6 @@ const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove}
                             <div className="col-xs-8">
                                 <div className="numbers">
                                     {currentPrice.toLocaleString('en')}
-                                    <p>{startingPrice.toLocaleString('en')}</p>
                                     <p>{percentMove.toFixed(2)}%</p>
                                 </div>
                             </div>
@@ -25,7 +24,7 @@ const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove}
                     <div className="footer">
                         <hr />
                         <div className="stats text-left">
-                            {tradingState}
+                            {tradingState} @ {startingPrice.toLocaleString('en')}
                         </div>
                     </div>
                 </div>
