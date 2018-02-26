@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import DisplayPrices from './DisplayPrices';
+import TradeTable from './TradeTable';
 
 class App extends Component {
 
@@ -46,7 +47,7 @@ class App extends Component {
 						this.setState({startingPrice: this.state.currentPrice})
 					}
 							// if price is up more than 1% then buy signal
-					if (percentMove > 0.2) {
+					if (percentMove > 0.3) {
 						console.log("Commence Buying at: ", this.state.currentPrice)
 							// set purchase (starting) price and track
 							// set tradingState to inPosition
@@ -65,7 +66,7 @@ class App extends Component {
 					break;
 				case "In Position":
 							// sell for loss if move < 1%, sell for profit if move > 5%
-					if (percentMove >= 0.6) {
+					if (percentMove >= 1.0) {
 						console.log("Selling for profit at: ", this.state.currentPrice)
 							// this.setState({startingPrice: this.state.currentPrice})
 						this.setState({tradingState: "Just Sold"})
@@ -93,13 +94,16 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App container">
+			<div className="container-fluid">
 				<DisplayPrices 
 					currentPrice={this.state.currentPrice}
 					startingPrice={this.state.startingPrice}
 					tradingState={this.state.tradingState}
 					percentMove={this.state.percentMove}
 				/>
+				<hr />
+				<TradeTable />
+
 			</div>
 		);
 	}

@@ -5,7 +5,7 @@ import bitcoinPic from './assets/img/bitcoin.png';
 const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
 
     return (
-        <div>
+        
             <div className = "col-xs-12 col-s-6 col-md-4">
                 <div className="card card-stats">
                     <div className="content">
@@ -29,7 +29,6 @@ const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove}
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
