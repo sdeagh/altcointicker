@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import DisplayPrices from './DisplayPrices';
-import TradeTable from './TradeTable';
+import TopNavbar from './components/TopNavbar/TopNavbar';
+import DisplayPrices from './components/DisplayPrices/DisplayPrices';
+import TradeTable from './components/TradeTable/TradeTable';
 
 class App extends Component {
 
@@ -95,6 +96,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container-fluid">
+				<TopNavbar />
 				<DisplayPrices 
 					currentPrice={this.state.currentPrice}
 					startingPrice={this.state.startingPrice}

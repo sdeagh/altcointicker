@@ -1,6 +1,6 @@
 import React from 'react';
 import './DisplayPrices.css';
-import bitcoinPic from './assets/img/bitcoin.png';
+// import bitcoinPic from './assets/img/bitcoin.png';
 
 const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
 
@@ -11,7 +11,7 @@ const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove}
                     <div className="content">
                         <div className="row ">
                             <div className="imageDiv col-xs-4">
-                                <img src={bitcoinPic} alt="coin graphic" />
+                                {/* <img src={bitcoinPic} alt="coin graphic" /> */}
                             </div>
                             <div className="col-xs-8">
                                 <div className="numbers">
