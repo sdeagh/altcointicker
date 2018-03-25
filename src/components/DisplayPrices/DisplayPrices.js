@@ -1,5 +1,6 @@
 import React from 'react';
 import './DisplayPrices.css';
+import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 //const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
 
@@ -12,6 +13,32 @@ class DisplayPrices extends React.Component {
     render() {
         console.log(this.props)
         return (
+            <div>
+
+            <Container fluid>
+                <Row>
+                    <Col xs="12" s="6" md="4">
+                        <Card>
+                            <Row>
+                                <Col xs="4" className='d-flex justify-content-center align-items-center'>
+                                    <i className='cc BTC' />
+                                </Col>
+                                <Col xs="8">
+                                    <CardBody className='d-flex flex-column align-items-center justify-content-end'>
+                                        <CardTitle className='cardTitle ml-auto'>{this.props.currentPrice.toLocaleString('en')}</CardTitle>
+                                        <CardText className='cardText ml-auto'>{this.props.percentMove.toFixed(2)}%</CardText>
+                                    </CardBody>
+                                </Col>
+                            </Row>
+                            <hr />
+                            <CardSubtitle>
+                                 {this.props.tradingState} @ {this.props.startingPrice.toLocaleString('en')}
+                            </CardSubtitle>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+
             <div className = "col-xs-12 col-s-6 col-md-4">
                 <div className="card card-stats">
                     <div className="content">
@@ -34,6 +61,8 @@ class DisplayPrices extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
+
             </div>
         )
     }
