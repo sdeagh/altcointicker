@@ -30,7 +30,7 @@ class DisplayPrices extends React.Component {
                     <div className="footer">
                         <hr />
                         <div className="stats text-left">
-                            {this.props.tradingState} @ {this.propsstartingPrice.toLocaleString('en')}
+                            {this.props.tradingState} @ {this.props.startingPrice.toLocaleString('en')}
                         </div>
                     </div>
                 </div>
