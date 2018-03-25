@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "cryptocoins-icons": "^2.7.0",
     "moment": "^2.21.0",
     "nouislider": "^11.0.3",
     "perfect-scrollbar": "^1.3.0",

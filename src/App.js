@@ -11,7 +11,6 @@ class App extends Component {
 		this.state = {
 			currentPrice: 100,
 			startingPrice: 100,
-			// tradingStates: inPosition, watching, justBought, justSold
 			tradingState: 'Just Sold',
 			percentMove: 0
 		}
@@ -89,23 +88,19 @@ class App extends Component {
 		return percentMove;
 	}
 
-	setStartingPrice = () => {
-		
-	}
-
 	render() {
 		return (
-			<div className="container-fluid">
+			<div>
 				<TopNavbar />
-				<DisplayPrices 
-					currentPrice={this.state.currentPrice}
-					startingPrice={this.state.startingPrice}
-					tradingState={this.state.tradingState}
-					percentMove={this.state.percentMove}
-				/>
-				<hr />
-				<TradeTable />
-
+				<div className="container-fluid">
+					<DisplayPrices 
+						currentPrice={this.state.currentPrice}
+						startingPrice={this.state.startingPrice}
+						tradingState={this.state.tradingState}
+						percentMove={this.state.percentMove}
+					/>
+					<TradeTable />
+				</div>
 			</div>
 		);
 	}

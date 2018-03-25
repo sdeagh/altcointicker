@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/light-bootstrap-dashboard.css';
+import 'cryptocoins-icons/webfont/cryptocoins.css'
 // import './assets/css/pe-icon-7-stroke.css';
 import { BrowserRouter as Router } from 'react-router-dom'
 

@@ -1,22 +1,28 @@
 import React from 'react';
 import './DisplayPrices.css';
-// import bitcoinPic from './assets/img/bitcoin.png';
 
-const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
+//const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
 
-    return (
-        
+class DisplayPrices extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        console.log(this.props)
+        return (
             <div className = "col-xs-12 col-s-6 col-md-4">
                 <div className="card card-stats">
                     <div className="content">
                         <div className="row ">
-                            <div className="imageDiv col-xs-4">
-                                {/* <img src={bitcoinPic} alt="coin graphic" /> */}
+                            <div className="col-4 d-flex justify-content-center align-items-center">
+                                <i className='cc BTC' />
                             </div>
-                            <div className="col-xs-8">
+                            <div className="col-8 d-flex justify-content-end align-items-center">
                                 <div className="numbers">
-                                    {currentPrice.toLocaleString('en')}
-                                    <p>{percentMove.toFixed(2)}%</p>
+                                    {this.props.currentPrice.toLocaleString('en')}
+                                    <p>{this.props.percentMove.toFixed(2)}%</p>
                                 </div>
                             </div>
                         </div>
@@ -24,12 +30,13 @@ const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove}
                     <div className="footer">
                         <hr />
                         <div className="stats text-left">
-                            {tradingState} @ {startingPrice.toLocaleString('en')}
+                            {this.props.tradingState} @ {this.propsstartingPrice.toLocaleString('en')}
                         </div>
                     </div>
                 </div>
             </div>
-    )
+        )
+    }
 }
 
 export default DisplayPrices;
