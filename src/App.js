@@ -39,7 +39,6 @@ class App extends Component {
 		})
 		//Decide what to do
 		.then(percentMove => {
-			console.log("% move: ", percentMove, "Price: ", this.state.currentPrice)
 			switch(this.state.tradingState) {
 				case "Watching":
 							//if price is down set new startingPrice
@@ -83,7 +82,6 @@ class App extends Component {
 	}
 
 	calculatePercentMove = () => {
-		console.log(this.state.currentPrice);
 		const percentMove = (this.state.currentPrice - this.state.startingPrice) / this.state.startingPrice * 100;
 		return percentMove;
 	}
