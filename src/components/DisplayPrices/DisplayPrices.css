@@ -10,3 +10,18 @@
 .cardText {
     text-align: right;
 }
+
+.cardSubtitle {
+    color: gray;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cardSubtitle > hr {
+    margin-bottom: 5px;
+}
+
+.bottomMessage {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}

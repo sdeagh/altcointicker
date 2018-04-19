@@ -1,6 +1,7 @@
 import React from 'react';
-import './DisplayPrices.css';
+
 import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import './DisplayPrices.css';
 
 //const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
 
@@ -30,10 +31,12 @@ class DisplayPrices extends React.Component {
                                     </CardBody>
                                 </Col>
                             </Row>
-                            <hr />
-                            <CardSubtitle>
-                                 {this.props.tradingState} @ {this.props.startingPrice.toLocaleString('en')}
-                            </CardSubtitle>
+                            <div className='cardSubtitle'>
+                                <hr />
+                                <CardText className='bottomMessage'>
+                                     {this.props.tradingState} @ {this.props.startingPrice.toLocaleString('en')}
+                                </CardText>
+                            </div>
                         </Card>
                     </Col>
                 </Row>
