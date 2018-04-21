@@ -1,16 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import {
 	Collapse,
 	Navbar,
 	NavbarToggler,
 	NavbarBrand,
 	Nav,
-	NavItem,
-	NavLink,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem } from 'reactstrap';
+	NavItem } from 'reactstrap';
 
 export default class Example extends React.Component {
 	constructor(props) {
@@ -35,12 +31,12 @@ render() {
           		<Collapse isOpen={this.state.isOpen} navbar>
             		<Nav className="ml-auto" navbar>
               			<NavItem>
-                			<NavLink href="/components/">Components</NavLink>
+                			<Link className="nav-link" to='/login' component='Login'>Login</Link>
               			</NavItem>
 						<NavItem>
-							<NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+							<Link className="nav-link" to='/signup' component='Signup'>Sign up</Link>
 						</NavItem>
-						<UncontrolledDropdown nav inNavbar>
+{/* 						<UncontrolledDropdown nav inNavbar>
 							<DropdownToggle nav caret>
 								Options
 							</DropdownToggle>
@@ -56,7 +52,7 @@ render() {
 									Reset
 								</DropdownItem>
 							</DropdownMenu>
-						</UncontrolledDropdown>
+						</UncontrolledDropdown> */}
 					</Nav>
 				</Collapse>
         	</Navbar>

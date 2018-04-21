@@ -3,6 +3,8 @@ import './App.css';
 import TopNavbar from './components/TopNavbar/TopNavbar';
 import DisplayPrices from './components/DisplayPrices/DisplayPrices';
 import TradeTable from './components/TradeTable/TradeTable';
+import Signup from './components/Signup/Signup'
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -12,7 +14,8 @@ class App extends Component {
 			currentPrice: 100,
 			startingPrice: 100,
 			tradingState: 'Just Sold',
-			percentMove: 0
+			percentMove: 0,
+			isLoggedIn: false
 		}
 	}
 
@@ -91,13 +94,18 @@ class App extends Component {
 			<div>
 				<TopNavbar />
 				<div className="container-fluid">
-					<DisplayPrices 
-						currentPrice={this.state.currentPrice}
-						startingPrice={this.state.startingPrice}
-						tradingState={this.state.tradingState}
-						percentMove={this.state.percentMove}
-					/>
-					<TradeTable />
+					<Switch>
+						<Route path='/signup' component={ Signup } />
+
+						<DisplayPrices 
+							currentPrice={this.state.currentPrice}
+							startingPrice={this.state.startingPrice}
+							tradingState={this.state.tradingState}
+							percentMove={this.state.percentMove}/>
+						<TradeTable />
+
+					</Switch>
+
 				</div>
 			</div>
 		);

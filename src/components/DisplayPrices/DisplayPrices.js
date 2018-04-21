@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Container, Row, Col, Card, CardText, CardBody, CardTitle } from 'reactstrap';
 import './DisplayPrices.css';
 
 //const DisplayPrices = ( {currentPrice, startingPrice, tradingState, percentMove} ) => {
 
 class DisplayPrices extends React.Component {
 
-    constructor(props) {
+    /* constructor(props) {
         super(props);
-    }
+    } */
 
     render() {
         console.log(this.props)
