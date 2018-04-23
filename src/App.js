@@ -24,7 +24,7 @@ class App extends Component {
 	}
 
 	setTimer = ((timer) => {
-		const getPrice = setInterval(this.getCurrentPrice, timer*1000)
+		setInterval(this.getCurrentPrice, timer*1000)
 	})
 
 	getCurrentPrice = () => {
